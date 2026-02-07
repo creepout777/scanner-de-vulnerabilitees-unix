@@ -1,0 +1,68 @@
+[+] Scan démarré à 20260111_1812
+-----------------------------
+[CVE] Logiciels installés (extrait)
+ 
+Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend 
+Err?=(none)/Reinst-required (Status,Err:
+Name Version
+ 
+7zip 23.01+dfsg-11
+accountsservice 23.13.9-2ubuntu6
+acl 2.3.2-1build1.1
+adduser 3.137ubuntu1
+adwaita-icon-theme 46.0-1
+alsa-base 1.0.25+dfsg-0ubuntu7
+alsa-topology-conf 1.2.5.1-2
+alsa-ucm-conf 1.2.10-1ubuntu5.7
+alsa-utils 1.2.9-1ubuntu5
+amd64-microcode 3.20250311.1ubuntu0.24.04.1
+anacron 2.3-39ubuntu2
+anki 2.1.15+dfsg-3ubuntu4.1
+apache2 2.4.58-1ubuntu8.8
+apache2-bin 2.4.58-1ubuntu8.8
+apache2-data 2.4.58-1ubuntu8.8
+-----------------------------
+[PATH INJECTION] Répertoires writable
+Writable : /usr/local/sbin
+Writable : /usr/local/bin
+Writable : /usr/sbin
+Writable : /usr/bin
+Writable : /sbin
+Writable : /bin
+Writable : /usr/games
+Writable : /usr/local/games
+-----------------------------
+[RED TEAM] Artefacts suspects
+>> authorized_keys
+>> Processus suspects
+root           5  0.0  0.0      0     0 ?        I<   15:48   0:00 [kworker/R-sync_wq]
+systemd+     772  0.0  0.0  91564  8076 ?        Ssl  15:48   0:00 /usr/lib/systemd/systemd-timesyncd
+root         834  0.0  0.0  83048  4144 ?        Ssl  15:48   0:00 /usr/sbin/irqbalance
+creep       2497  0.0  0.0 383104  7828 ?        Sl   15:49   0:00 /usr/libexec/at-spi-bus-launcher --launch-immediately
+creep       2645  0.0  0.2 541740 39568 ?        Sl   15:49   0:00 cinnamon-launcher
+-----------------------------
+[SUDOERS] Entrées dangereuses
+/etc/sudoers.d/mintdrivers:ALL ALL = NOPASSWD:/usr/bin/mintdrivers-remove-live-media
+/etc/sudoers.d/mintdrivers:ALL ALL = NOPASSWD:/usr/bin/mintdrivers-load-broadcom-modules
+/etc/sudoers.d/mintupdate:ALL ALL = NOPASSWD:/usr/bin/mint-refresh-cache
+/etc/sudoers.d/mintupdate:ALL ALL = NOPASSWD:/usr/lib/linuxmint/mintUpdate/dpkg_lock_check.sh
+-----------------------------
+[SUID / SGID] Binaires à privilèges
+-----------------------------
+[SYSTEMD TIMERS] Timers actifs
+NEXT                            LEFT LAST                              PASSED UNIT                         ACTIVATES
+Sun 2026-01-11 18:31:22 +01    18min Sun 2026-01-11 17:34:18 +01    38min ago anacron.timer                anacron.service
+Sun 2026-01-11 18:32:58 +01    19min Fri 2026-01-09 03:55:51 +01            - plocate-updatedb.timer       plocate-updatedb.service
+Sun 2026-01-11 18:37:39 +01    24min Fri 2026-01-09 18:28:03 +01            - motd-news.timer              motd-news.service
+Sun 2026-01-11 18:39:00 +01    25min Sun 2026-01-11 18:09:03 +01 3min 57s ago phpsessionclean.timer        phpsessionclean.service
+Sun 2026-01-11 18:46:44 +01    33min Sun 2026-01-11 17:37:42 +01    35min ago fwupd-refresh.timer          fwupd-refresh.service
+Sun 2026-01-11 20:21:13 +01  2h 8min Fri 2026-01-09 20:20:37 +01            - apt-daily.timer              apt-daily.service
+Mon 2026-01-12 00:00:00 +01 5h 46min Sun 2026-01-11 15:48:41 +01 2h 24min ago dpkg-db-backup.timer         dpkg-db-backup.service
+Mon 2026-01-12 00:00:00 +01 5h 46min Sun 2026-01-11 15:48:41 +01 2h 24min ago logrotate.timer              logrotate.service
+Mon 2026-01-12 01:08:37 +01       6h Mon 2026-01-05 05:41:43 +01            - fstrim.timer                 fstrim.service
+Mon 2026-01-12 06:57:10 +01      12h Sun 2026-01-11 16:30:38 +01 1h 42min ago apt-daily-upgrade.timer      apt-daily-upgrade.service
+Mon 2026-01-12 09:16:28 +01      15h Sun 2026-01-11 16:40:42 +01 1h 32min ago man-db.timer                 man-db.service
+Mon 2026-01-12 16:03:08 +01      21h Sun 2026-01-11 16:03:08 +01  2h 9min ago systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.service
+Sun 2026-01-18 03:10:20 +01   6 days Sun 2026-01-11 15:48:41 +01 2h 24min ago e2scrub_all.timer            e2scrub_all.service
+
+13 timers listed.

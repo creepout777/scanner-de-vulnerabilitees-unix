@@ -1,0 +1,137 @@
+[+] Scan démarré à 20260111_2321
+-----------------------------
+[CVE] Logiciels installés (extrait)
+ 
+Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend 
+Err?=(none)/Reinst-required (Status,Err:
+Name Version
+ 
+7zip 23.01+dfsg-11
+accountsservice 23.13.9-2ubuntu6
+acl 2.3.2-1build1.1
+adduser 3.137ubuntu1
+adwaita-icon-theme 46.0-1
+alsa-base 1.0.25+dfsg-0ubuntu7
+alsa-topology-conf 1.2.5.1-2
+alsa-ucm-conf 1.2.10-1ubuntu5.7
+alsa-utils 1.2.9-1ubuntu5
+amd64-microcode 3.20250311.1ubuntu0.24.04.1
+anacron 2.3-39ubuntu2
+anki 2.1.15+dfsg-3ubuntu4.1
+apache2 2.4.58-1ubuntu8.8
+apache2-bin 2.4.58-1ubuntu8.8
+apache2-data 2.4.58-1ubuntu8.8
+-----------------------------
+[PATH INJECTION] Répertoires writable
+Writable : /usr/local/sbin
+Writable : /usr/local/bin
+Writable : /usr/sbin
+Writable : /usr/bin
+Writable : /sbin
+Writable : /bin
+-----------------------------
+[RED TEAM] Artefacts suspects
+>> authorized_keys
+>> Processus suspects
+root           5  0.0  0.0      0     0 ?        I<   15:48   0:00 [kworker/R-sync_wq]
+systemd+     772  0.0  0.0  91564  8076 ?        Ssl  15:48   0:00 /usr/lib/systemd/systemd-timesyncd
+root         834  0.0  0.0  83048  4144 ?        Ssl  15:48   0:01 /usr/sbin/irqbalance
+creep       2497  0.0  0.0 383104  7828 ?        Sl   15:49   0:00 /usr/libexec/at-spi-bus-launcher --launch-immediately
+creep       2645  0.0  0.2 541740 39568 ?        Sl   15:49   0:00 cinnamon-launcher
+root      482959  0.0  0.0   8308  2384 ?        S    23:10   0:00 dbus-launch --autolaunch=c664d44329d54e2a92dd818f6c87ce98 --binary-syntax --close-stderr
+-----------------------------
+[SUDOERS] Entrées dangereuses
+/etc/sudoers.d/mintdrivers:ALL ALL = NOPASSWD:/usr/bin/mintdrivers-remove-live-media
+/etc/sudoers.d/mintdrivers:ALL ALL = NOPASSWD:/usr/bin/mintdrivers-load-broadcom-modules
+/etc/sudoers.d/mintupdate:ALL ALL = NOPASSWD:/usr/bin/mint-refresh-cache
+/etc/sudoers.d/mintupdate:ALL ALL = NOPASSWD:/usr/lib/linuxmint/mintUpdate/dpkg_lock_check.sh
+-----------------------------
+[SUID / SGID] Binaires à privilèges
+/usr/sbin/mount.cifs
+/usr/sbin/unix_chkpwd
+/usr/sbin/pppd
+/usr/sbin/mount.ecryptfs_private
+/usr/sbin/pam_extrausers_chkpwd
+/usr/libexec/spice-client-glib-usb-acl-helper
+/usr/libexec/camel-lock-helper-1.2
+/usr/bin/su
+/usr/bin/passwd
+/usr/bin/ssh-agent
+/usr/bin/umount
+/usr/bin/crontab
+/usr/bin/gpasswd
+/usr/bin/chfn
+/usr/bin/chsh
+/usr/bin/newgrp
+/usr/bin/expiry
+/usr/bin/mount
+/usr/bin/chage
+/usr/bin/plocate
+/usr/bin/sudo
+/usr/bin/pkexec
+/usr/bin/fusermount3
+/usr/lib/virtualbox/VBoxNetNAT
+/usr/lib/virtualbox/VBoxHeadless
+/usr/lib/virtualbox/VBoxNetDHCP
+/usr/lib/virtualbox/VBoxNetAdpCtl
+/usr/lib/virtualbox/VBoxVolInfo
+/usr/lib/virtualbox/VirtualBoxVM
+/usr/lib/cockpit/cockpit-session
+/usr/lib/openssh/ssh-keysign
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/lib/polkit-1/polkit-agent-helper-1
+/usr/lib/xorg/Xorg.wrap
+/opt/lampp/bin/suexec
+/opt/pt/bin/updatepttp
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/sbin/mount.cifs
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/sbin/unix_chkpwd
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/sbin/pppd
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/sbin/mount.ecryptfs_private
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/sbin/pam_extrausers_chkpwd
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/libexec/camel-lock-helper-1.2
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/su
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/passwd
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/ssh-agent
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/umount
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/crontab
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/gpasswd
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/chfn
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/chsh
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/newgrp
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/expiry
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/mount
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/chage
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/plocate
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/sudo
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/pkexec
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/fusermount3
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/virtualbox/VBoxNetNAT
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/virtualbox/VBoxHeadless
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/virtualbox/VBoxNetDHCP
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/virtualbox/VBoxNetAdpCtl
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/virtualbox/VBoxVolInfo
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/virtualbox/VirtualBoxVM
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/openssh/ssh-keysign
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/polkit-1/polkit-agent-helper-1
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/xorg/Xorg.wrap
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/opt/lampp/bin/suexec
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/opt/pt/bin/updatepttp
+-----------------------------
+[SYSTEMD TIMERS] Timers actifs
+NEXT                            LEFT LAST                              PASSED UNIT                         ACTIVATES
+Sun 2026-01-11 23:31:51 +01    10min Sun 2026-01-11 22:34:03 +01    47min ago anacron.timer                anacron.service
+Sun 2026-01-11 23:39:00 +01    17min Sun 2026-01-11 23:09:03 +01    12min ago phpsessionclean.timer        phpsessionclean.service
+Sun 2026-01-11 23:53:16 +01    31min Sun 2026-01-11 22:48:03 +01    33min ago fwupd-refresh.timer          fwupd-refresh.service
+Mon 2026-01-12 00:00:00 +01    38min Sun 2026-01-11 15:48:41 +01       7h ago dpkg-db-backup.timer         dpkg-db-backup.service
+Mon 2026-01-12 00:00:00 +01    38min Sun 2026-01-11 15:48:41 +01       7h ago logrotate.timer              logrotate.service
+Mon 2026-01-12 01:08:37 +01 1h 47min Mon 2026-01-05 05:41:43 +01            - fstrim.timer                 fstrim.service
+Mon 2026-01-12 01:52:29 +01 2h 31min Sun 2026-01-11 18:37:42 +01 4h 43min ago motd-news.timer              motd-news.service
+Mon 2026-01-12 06:57:10 +01       7h Sun 2026-01-11 16:30:38 +01       6h ago apt-daily-upgrade.timer      apt-daily-upgrade.service
+Mon 2026-01-12 09:16:28 +01       9h Sun 2026-01-11 16:40:42 +01       6h ago man-db.timer                 man-db.service
+Mon 2026-01-12 11:09:45 +01      11h Sun 2026-01-11 18:33:08 +01 4h 48min ago plocate-updatedb.timer       plocate-updatedb.service
+Mon 2026-01-12 16:03:08 +01      16h Sun 2026-01-11 16:03:08 +01       7h ago systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.service
+Mon 2026-01-12 17:48:13 +01      18h Sun 2026-01-11 20:21:26 +01 2h 59min ago apt-daily.timer              apt-daily.service
+Sun 2026-01-18 03:10:20 +01   6 days Sun 2026-01-11 15:48:41 +01       7h ago e2scrub_all.timer            e2scrub_all.service
+
+13 timers listed.

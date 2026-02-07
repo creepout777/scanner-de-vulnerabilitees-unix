@@ -1,0 +1,400 @@
+[+] Scan démarré à 20260111_2225
+-----------------------------
+[CVE] Logiciels installés (extrait)
+ 
+Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend 
+Err?=(none)/Reinst-required (Status,Err:
+Name Version
+ 
+7zip 23.01+dfsg-11
+accountsservice 23.13.9-2ubuntu6
+acl 2.3.2-1build1.1
+adduser 3.137ubuntu1
+adwaita-icon-theme 46.0-1
+alsa-base 1.0.25+dfsg-0ubuntu7
+alsa-topology-conf 1.2.5.1-2
+alsa-ucm-conf 1.2.10-1ubuntu5.7
+alsa-utils 1.2.9-1ubuntu5
+amd64-microcode 3.20250311.1ubuntu0.24.04.1
+anacron 2.3-39ubuntu2
+anki 2.1.15+dfsg-3ubuntu4.1
+apache2 2.4.58-1ubuntu8.8
+apache2-bin 2.4.58-1ubuntu8.8
+apache2-data 2.4.58-1ubuntu8.8
+-----------------------------
+[PATH INJECTION] Répertoires writable
+Writable : /usr/local/sbin
+Writable : /usr/local/bin
+Writable : /usr/sbin
+Writable : /usr/bin
+Writable : /sbin
+Writable : /bin
+-----------------------------
+[RED TEAM] Artefacts suspects
+>> authorized_keys
+>> Processus suspects
+root           5  0.0  0.0      0     0 ?        I<   15:48   0:00 [kworker/R-sync_wq]
+systemd+     772  0.0  0.0  91564  8076 ?        Ssl  15:48   0:00 /usr/lib/systemd/systemd-timesyncd
+root         834  0.0  0.0  83048  4144 ?        Ssl  15:48   0:00 /usr/sbin/irqbalance
+creep       2497  0.0  0.0 383104  7828 ?        Sl   15:49   0:00 /usr/libexec/at-spi-bus-launcher --launch-immediately
+creep       2645  0.0  0.2 541740 39568 ?        Sl   15:49   0:00 cinnamon-launcher
+-----------------------------
+[SUDOERS] Entrées dangereuses
+/etc/sudoers.d/mintdrivers:ALL ALL = NOPASSWD:/usr/bin/mintdrivers-remove-live-media
+/etc/sudoers.d/mintdrivers:ALL ALL = NOPASSWD:/usr/bin/mintdrivers-load-broadcom-modules
+/etc/sudoers.d/mintupdate:ALL ALL = NOPASSWD:/usr/bin/mint-refresh-cache
+/etc/sudoers.d/mintupdate:ALL ALL = NOPASSWD:/usr/lib/linuxmint/mintUpdate/dpkg_lock_check.sh
+-----------------------------
+[SUID / SGID] Binaires à privilèges
+/usr/sbin/mount.cifs
+/usr/sbin/unix_chkpwd
+/usr/sbin/pppd
+/usr/sbin/mount.ecryptfs_private
+/usr/sbin/pam_extrausers_chkpwd
+/usr/libexec/spice-client-glib-usb-acl-helper
+/usr/libexec/camel-lock-helper-1.2
+/usr/bin/su
+/usr/bin/passwd
+/usr/bin/ssh-agent
+/usr/bin/umount
+/usr/bin/crontab
+/usr/bin/gpasswd
+/usr/bin/chfn
+/usr/bin/chsh
+/usr/bin/newgrp
+/usr/bin/expiry
+/usr/bin/mount
+/usr/bin/chage
+/usr/bin/plocate
+/usr/bin/sudo
+/usr/bin/pkexec
+/usr/bin/fusermount3
+/usr/lib/virtualbox/VBoxNetNAT
+/usr/lib/virtualbox/VBoxHeadless
+/usr/lib/virtualbox/VBoxNetDHCP
+/usr/lib/virtualbox/VBoxNetAdpCtl
+/usr/lib/virtualbox/VBoxVolInfo
+/usr/lib/virtualbox/VirtualBoxVM
+/usr/lib/cockpit/cockpit-session
+/usr/lib/openssh/ssh-keysign
+/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/usr/lib/polkit-1/polkit-agent-helper-1
+/usr/lib/xorg/Xorg.wrap
+/opt/lampp/bin/suexec
+/opt/pt/bin/updatepttp
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/sbin/mount.cifs
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/sbin/unix_chkpwd
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/sbin/pppd
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/sbin/mount.ecryptfs_private
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/sbin/pam_extrausers_chkpwd
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/libexec/camel-lock-helper-1.2
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/su
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/passwd
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/ssh-agent
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/umount
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/crontab
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/gpasswd
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/chfn
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/chsh
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/newgrp
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/expiry
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/mount
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/chage
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/plocate
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/sudo
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/pkexec
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/fusermount3
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/virtualbox/VBoxNetNAT
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/virtualbox/VBoxHeadless
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/virtualbox/VBoxNetDHCP
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/virtualbox/VBoxNetAdpCtl
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/virtualbox/VBoxVolInfo
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/virtualbox/VirtualBoxVM
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/openssh/ssh-keysign
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/polkit-1/polkit-agent-helper-1
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/xorg/Xorg.wrap
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/opt/lampp/bin/suexec
+/timeshift/snapshots/2025-10-20_11-27-45/localhost/opt/pt/bin/updatepttp
+-----------------------------
+[SYSTEMD TIMERS] Timers actifs
+NEXT                            LEFT LAST                              PASSED UNIT                         ACTIVATES
+Sun 2026-01-11 22:33:59 +01     8min Sun 2026-01-11 21:33:18 +01    51min ago anacron.timer                anacron.service
+Sun 2026-01-11 22:39:00 +01    13min Sun 2026-01-11 22:09:03 +01    16min ago phpsessionclean.timer        phpsessionclean.service
+Sun 2026-01-11 22:47:59 +01    22min Sun 2026-01-11 21:27:48 +01    57min ago fwupd-refresh.timer          fwupd-refresh.service
+Mon 2026-01-12 00:00:00 +01 1h 34min Sun 2026-01-11 15:48:41 +01       6h ago dpkg-db-backup.timer         dpkg-db-backup.service
+Mon 2026-01-12 00:00:00 +01 1h 34min Sun 2026-01-11 15:48:41 +01       6h ago logrotate.timer              logrotate.service
+Mon 2026-01-12 01:08:37 +01 2h 43min Mon 2026-01-05 05:41:43 +01            - fstrim.timer                 fstrim.service
+Mon 2026-01-12 01:52:29 +01 3h 27min Sun 2026-01-11 18:37:42 +01 3h 47min ago motd-news.timer              motd-news.service
+Mon 2026-01-12 06:57:10 +01       8h Sun 2026-01-11 16:30:38 +01 5h 54min ago apt-daily-upgrade.timer      apt-daily-upgrade.service
+Mon 2026-01-12 09:16:28 +01      10h Sun 2026-01-11 16:40:42 +01 5h 44min ago man-db.timer                 man-db.service
+Mon 2026-01-12 11:09:45 +01      12h Sun 2026-01-11 18:33:08 +01 3h 52min ago plocate-updatedb.timer       plocate-updatedb.service
+Mon 2026-01-12 16:03:08 +01      17h Sun 2026-01-11 16:03:08 +01       6h ago systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.service
+Mon 2026-01-12 17:48:13 +01      19h Sun 2026-01-11 20:21:26 +01  2h 3min ago apt-daily.timer              apt-daily.service
+Sun 2026-01-18 03:10:20 +01   6 days Sun 2026-01-11 15:48:41 +01       6h ago e2scrub_all.timer            e2scrub_all.service
+
+13 timers listed.
+===== CHANGEMENTS DEPUIS LE DERNIER SCAN =====
+1c1
+< [+] Scan démarré à 20260111_2224
+---
+> [+] Scan démarré à 20260111_2225
+122,131c122,131
+< Sun 2026-01-11 22:33:59 +01     9min Sun 2026-01-11 21:33:18 +01    51min ago anacron.timer                anacron.service
+< Sun 2026-01-11 22:39:00 +01    14min Sun 2026-01-11 22:09:03 +01    15min ago phpsessionclean.timer        phpsessionclean.service
+< Sun 2026-01-11 22:47:59 +01    23min Sun 2026-01-11 21:27:48 +01    56min ago fwupd-refresh.timer          fwupd-refresh.service
+< Mon 2026-01-12 00:00:00 +01 1h 35min Sun 2026-01-11 15:48:41 +01       6h ago dpkg-db-backup.timer         dpkg-db-backup.service
+< Mon 2026-01-12 00:00:00 +01 1h 35min Sun 2026-01-11 15:48:41 +01       6h ago logrotate.timer              logrotate.service
+< Mon 2026-01-12 01:08:37 +01 2h 44min Mon 2026-01-05 05:41:43 +01            - fstrim.timer                 fstrim.service
+< Mon 2026-01-12 01:52:29 +01 3h 27min Sun 2026-01-11 18:37:42 +01 3h 46min ago motd-news.timer              motd-news.service
+< Mon 2026-01-12 06:57:10 +01       8h Sun 2026-01-11 16:30:38 +01 5h 53min ago apt-daily-upgrade.timer      apt-daily-upgrade.service
+< Mon 2026-01-12 09:16:28 +01      10h Sun 2026-01-11 16:40:42 +01 5h 43min ago man-db.timer                 man-db.service
+< Mon 2026-01-12 11:09:45 +01      12h Sun 2026-01-11 18:33:08 +01 3h 51min ago plocate-updatedb.timer       plocate-updatedb.service
+---
+> Sun 2026-01-11 22:33:59 +01     8min Sun 2026-01-11 21:33:18 +01    51min ago anacron.timer                anacron.service
+> Sun 2026-01-11 22:39:00 +01    13min Sun 2026-01-11 22:09:03 +01    16min ago phpsessionclean.timer        phpsessionclean.service
+> Sun 2026-01-11 22:47:59 +01    22min Sun 2026-01-11 21:27:48 +01    57min ago fwupd-refresh.timer          fwupd-refresh.service
+> Mon 2026-01-12 00:00:00 +01 1h 34min Sun 2026-01-11 15:48:41 +01       6h ago dpkg-db-backup.timer         dpkg-db-backup.service
+> Mon 2026-01-12 00:00:00 +01 1h 34min Sun 2026-01-11 15:48:41 +01       6h ago logrotate.timer              logrotate.service
+> Mon 2026-01-12 01:08:37 +01 2h 43min Mon 2026-01-05 05:41:43 +01            - fstrim.timer                 fstrim.service
+> Mon 2026-01-12 01:52:29 +01 3h 27min Sun 2026-01-11 18:37:42 +01 3h 47min ago motd-news.timer              motd-news.service
+> Mon 2026-01-12 06:57:10 +01       8h Sun 2026-01-11 16:30:38 +01 5h 54min ago apt-daily-upgrade.timer      apt-daily-upgrade.service
+> Mon 2026-01-12 09:16:28 +01      10h Sun 2026-01-11 16:40:42 +01 5h 44min ago man-db.timer                 man-db.service
+> Mon 2026-01-12 11:09:45 +01      12h Sun 2026-01-11 18:33:08 +01 3h 52min ago plocate-updatedb.timer       plocate-updatedb.service
+138,373d137
+< 1c1
+< < [+] Scan démarré à 20260111_2220
+< ---
+< > [+] Scan démarré à 20260111_2224
+< 122,131c122,131
+< < Sun 2026-01-11 22:33:59 +01    13min Sun 2026-01-11 21:33:18 +01    47min ago anacron.timer                anacron.service
+< < Sun 2026-01-11 22:39:00 +01    18min Sun 2026-01-11 22:09:03 +01    11min ago phpsessionclean.timer        phpsessionclean.service
+< < Sun 2026-01-11 22:47:59 +01    27min Sun 2026-01-11 21:27:48 +01    52min ago fwupd-refresh.timer          fwupd-refresh.service
+< < Mon 2026-01-12 00:00:00 +01 1h 39min Sun 2026-01-11 15:48:41 +01       6h ago dpkg-db-backup.timer         dpkg-db-backup.service
+< < Mon 2026-01-12 00:00:00 +01 1h 39min Sun 2026-01-11 15:48:41 +01       6h ago logrotate.timer              logrotate.service
+< < Mon 2026-01-12 01:08:37 +01 2h 47min Mon 2026-01-05 05:41:43 +01            - fstrim.timer                 fstrim.service
+< < Mon 2026-01-12 01:52:29 +01 3h 31min Sun 2026-01-11 18:37:42 +01 3h 42min ago motd-news.timer              motd-news.service
+< < Mon 2026-01-12 06:57:10 +01       8h Sun 2026-01-11 16:30:38 +01 5h 50min ago apt-daily-upgrade.timer      apt-daily-upgrade.service
+< < Mon 2026-01-12 09:16:28 +01      10h Sun 2026-01-11 16:40:42 +01 5h 39min ago man-db.timer                 man-db.service
+< < Mon 2026-01-12 11:09:45 +01      12h Sun 2026-01-11 18:33:08 +01 3h 47min ago plocate-updatedb.timer       plocate-updatedb.service
+< ---
+< > Sun 2026-01-11 22:33:59 +01     9min Sun 2026-01-11 21:33:18 +01    51min ago anacron.timer                anacron.service
+< > Sun 2026-01-11 22:39:00 +01    14min Sun 2026-01-11 22:09:03 +01    15min ago phpsessionclean.timer        phpsessionclean.service
+< > Sun 2026-01-11 22:47:59 +01    23min Sun 2026-01-11 21:27:48 +01    56min ago fwupd-refresh.timer          fwupd-refresh.service
+< > Mon 2026-01-12 00:00:00 +01 1h 35min Sun 2026-01-11 15:48:41 +01       6h ago dpkg-db-backup.timer         dpkg-db-backup.service
+< > Mon 2026-01-12 00:00:00 +01 1h 35min Sun 2026-01-11 15:48:41 +01       6h ago logrotate.timer              logrotate.service
+< > Mon 2026-01-12 01:08:37 +01 2h 44min Mon 2026-01-05 05:41:43 +01            - fstrim.timer                 fstrim.service
+< > Mon 2026-01-12 01:52:29 +01 3h 27min Sun 2026-01-11 18:37:42 +01 3h 46min ago motd-news.timer              motd-news.service
+< > Mon 2026-01-12 06:57:10 +01       8h Sun 2026-01-11 16:30:38 +01 5h 53min ago apt-daily-upgrade.timer      apt-daily-upgrade.service
+< > Mon 2026-01-12 09:16:28 +01      10h Sun 2026-01-11 16:40:42 +01 5h 43min ago man-db.timer                 man-db.service
+< > Mon 2026-01-12 11:09:45 +01      12h Sun 2026-01-11 18:33:08 +01 3h 51min ago plocate-updatedb.timer       plocate-updatedb.service
+< 133c133
+< < Mon 2026-01-12 17:48:13 +01      19h Sun 2026-01-11 20:21:26 +01 1h 59min ago apt-daily.timer              apt-daily.service
+< ---
+< > Mon 2026-01-12 17:48:13 +01      19h Sun 2026-01-11 20:21:26 +01  2h 3min ago apt-daily.timer              apt-daily.service
+< 138,342d137
+< < 1c1
+< < < [+] Scan démarré à 20260111_2214
+< < ---
+< < > [+] Scan démarré à 20260111_2220
+< < 32,33d31
+< < < Writable : /usr/games
+< < < Writable : /usr/local/games
+< < 124,133c122,131
+< < < Sun 2026-01-11 22:33:59 +01    19min Sun 2026-01-11 21:33:18 +01    41min ago anacron.timer                anacron.service
+< < < Sun 2026-01-11 22:39:00 +01    24min Sun 2026-01-11 22:09:03 +01     5min ago phpsessionclean.timer        phpsessionclean.service
+< < < Sun 2026-01-11 22:47:59 +01    33min Sun 2026-01-11 21:27:48 +01    46min ago fwupd-refresh.timer          fwupd-refresh.service
+< < < Mon 2026-01-12 00:00:00 +01 1h 45min Sun 2026-01-11 15:48:41 +01       6h ago dpkg-db-backup.timer         dpkg-db-backup.service
+< < < Mon 2026-01-12 00:00:00 +01 1h 45min Sun 2026-01-11 15:48:41 +01       6h ago logrotate.timer              logrotate.service
+< < < Mon 2026-01-12 01:08:37 +01 2h 53min Mon 2026-01-05 05:41:43 +01            - fstrim.timer                 fstrim.service
+< < < Mon 2026-01-12 01:52:29 +01 3h 37min Sun 2026-01-11 18:37:42 +01 3h 37min ago motd-news.timer              motd-news.service
+< < < Mon 2026-01-12 06:57:10 +01       8h Sun 2026-01-11 16:30:38 +01 5h 44min ago apt-daily-upgrade.timer      apt-daily-upgrade.service
+< < < Mon 2026-01-12 09:16:28 +01      11h Sun 2026-01-11 16:40:42 +01 5h 34min ago man-db.timer                 man-db.service
+< < < Mon 2026-01-12 11:09:45 +01      12h Sun 2026-01-11 18:33:08 +01 3h 41min ago plocate-updatedb.timer       plocate-updatedb.service
+< < ---
+< < > Sun 2026-01-11 22:33:59 +01    13min Sun 2026-01-11 21:33:18 +01    47min ago anacron.timer                anacron.service
+< < > Sun 2026-01-11 22:39:00 +01    18min Sun 2026-01-11 22:09:03 +01    11min ago phpsessionclean.timer        phpsessionclean.service
+< < > Sun 2026-01-11 22:47:59 +01    27min Sun 2026-01-11 21:27:48 +01    52min ago fwupd-refresh.timer          fwupd-refresh.service
+< < > Mon 2026-01-12 00:00:00 +01 1h 39min Sun 2026-01-11 15:48:41 +01       6h ago dpkg-db-backup.timer         dpkg-db-backup.service
+< < > Mon 2026-01-12 00:00:00 +01 1h 39min Sun 2026-01-11 15:48:41 +01       6h ago logrotate.timer              logrotate.service
+< < > Mon 2026-01-12 01:08:37 +01 2h 47min Mon 2026-01-05 05:41:43 +01            - fstrim.timer                 fstrim.service
+< < > Mon 2026-01-12 01:52:29 +01 3h 31min Sun 2026-01-11 18:37:42 +01 3h 42min ago motd-news.timer              motd-news.service
+< < > Mon 2026-01-12 06:57:10 +01       8h Sun 2026-01-11 16:30:38 +01 5h 50min ago apt-daily-upgrade.timer      apt-daily-upgrade.service
+< < > Mon 2026-01-12 09:16:28 +01      10h Sun 2026-01-11 16:40:42 +01 5h 39min ago man-db.timer                 man-db.service
+< < > Mon 2026-01-12 11:09:45 +01      12h Sun 2026-01-11 18:33:08 +01 3h 47min ago plocate-updatedb.timer       plocate-updatedb.service
+< < 135c133
+< < < Mon 2026-01-12 17:48:13 +01      19h Sun 2026-01-11 20:21:26 +01 1h 53min ago apt-daily.timer              apt-daily.service
+< < ---
+< < > Mon 2026-01-12 17:48:13 +01      19h Sun 2026-01-11 20:21:26 +01 1h 59min ago apt-daily.timer              apt-daily.service
+< < 140,310d137
+< < < 1c1
+< < < < [+] Scan démarré à 20260111_1822
+< < < ---
+< < < > [+] Scan démarré à 20260111_2214
+< < < 124,136c124,136
+< < < < Sun 2026-01-11 18:31:22 +01     9min Sun 2026-01-11 17:34:18 +01    47min ago anacron.timer                anacron.service
+< < < < Sun 2026-01-11 18:32:58 +01    10min Fri 2026-01-09 03:55:51 +01            - plocate-updatedb.timer       plocate-updatedb.service
+< < < < Sun 2026-01-11 18:37:39 +01    15min Fri 2026-01-09 18:28:03 +01            - motd-news.timer              motd-news.service
+< < < < Sun 2026-01-11 18:39:00 +01    16min Sun 2026-01-11 18:09:03 +01    13min ago phpsessionclean.timer        phpsessionclean.service
+< < < < Sun 2026-01-11 18:46:44 +01    24min Sun 2026-01-11 17:37:42 +01    44min ago fwupd-refresh.timer          fwupd-refresh.service
+< < < < Sun 2026-01-11 20:21:13 +01 1h 58min Fri 2026-01-09 20:20:37 +01            - apt-daily.timer              apt-daily.service
+< < < < Mon 2026-01-12 00:00:00 +01 5h 37min Sun 2026-01-11 15:48:41 +01 2h 33min ago dpkg-db-backup.timer         dpkg-db-backup.service
+< < < < Mon 2026-01-12 00:00:00 +01 5h 37min Sun 2026-01-11 15:48:41 +01 2h 33min ago logrotate.timer              logrotate.service
+< < < < Mon 2026-01-12 01:08:37 +01       6h Mon 2026-01-05 05:41:43 +01            - fstrim.timer                 fstrim.service
+< < < < Mon 2026-01-12 06:57:10 +01      12h Sun 2026-01-11 16:30:38 +01 1h 51min ago apt-daily-upgrade.timer      apt-daily-upgrade.service
+< < < < Mon 2026-01-12 09:16:28 +01      14h Sun 2026-01-11 16:40:42 +01 1h 41min ago man-db.timer                 man-db.service
+< < < < Mon 2026-01-12 16:03:08 +01      21h Sun 2026-01-11 16:03:08 +01 2h 19min ago systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.service
+< < < < Sun 2026-01-18 03:10:20 +01   6 days Sun 2026-01-11 15:48:41 +01 2h 33min ago e2scrub_all.timer            e2scrub_all.service
+< < < ---
+< < < > Sun 2026-01-11 22:33:59 +01    19min Sun 2026-01-11 21:33:18 +01    41min ago anacron.timer                anacron.service
+< < < > Sun 2026-01-11 22:39:00 +01    24min Sun 2026-01-11 22:09:03 +01     5min ago phpsessionclean.timer        phpsessionclean.service
+< < < > Sun 2026-01-11 22:47:59 +01    33min Sun 2026-01-11 21:27:48 +01    46min ago fwupd-refresh.timer          fwupd-refresh.service
+< < < > Mon 2026-01-12 00:00:00 +01 1h 45min Sun 2026-01-11 15:48:41 +01       6h ago dpkg-db-backup.timer         dpkg-db-backup.service
+< < < > Mon 2026-01-12 00:00:00 +01 1h 45min Sun 2026-01-11 15:48:41 +01       6h ago logrotate.timer              logrotate.service
+< < < > Mon 2026-01-12 01:08:37 +01 2h 53min Mon 2026-01-05 05:41:43 +01            - fstrim.timer                 fstrim.service
+< < < > Mon 2026-01-12 01:52:29 +01 3h 37min Sun 2026-01-11 18:37:42 +01 3h 37min ago motd-news.timer              motd-news.service
+< < < > Mon 2026-01-12 06:57:10 +01       8h Sun 2026-01-11 16:30:38 +01 5h 44min ago apt-daily-upgrade.timer      apt-daily-upgrade.service
+< < < > Mon 2026-01-12 09:16:28 +01      11h Sun 2026-01-11 16:40:42 +01 5h 34min ago man-db.timer                 man-db.service
+< < < > Mon 2026-01-12 11:09:45 +01      12h Sun 2026-01-11 18:33:08 +01 3h 41min ago plocate-updatedb.timer       plocate-updatedb.service
+< < < > Mon 2026-01-12 16:03:08 +01      17h Sun 2026-01-11 16:03:08 +01       6h ago systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.service
+< < < > Mon 2026-01-12 17:48:13 +01      19h Sun 2026-01-11 20:21:26 +01 1h 53min ago apt-daily.timer              apt-daily.service
+< < < > Sun 2026-01-18 03:10:20 +01   6 days Sun 2026-01-11 15:48:41 +01       6h ago e2scrub_all.timer            e2scrub_all.service
+< < < 140,277d139
+< < < < 1c1
+< < < < < [+] Scan démarré à 20260111_1814
+< < < < ---
+< < < < > [+] Scan démarré à 20260111_1822
+< < < < 124,131c124,131
+< < < < < Sun 2026-01-11 18:31:22 +01    16min Sun 2026-01-11 17:34:18 +01    40min ago anacron.timer                anacron.service
+< < < < < Sun 2026-01-11 18:32:58 +01    18min Fri 2026-01-09 03:55:51 +01            - plocate-updatedb.timer       plocate-updatedb.service
+< < < < < Sun 2026-01-11 18:37:39 +01    22min Fri 2026-01-09 18:28:03 +01            - motd-news.timer              motd-news.service
+< < < < < Sun 2026-01-11 18:39:00 +01    24min Sun 2026-01-11 18:09:03 +01     5min ago phpsessionclean.timer        phpsessionclean.service
+< < < < < Sun 2026-01-11 18:46:44 +01    31min Sun 2026-01-11 17:37:42 +01    37min ago fwupd-refresh.timer          fwupd-refresh.service
+< < < < < Sun 2026-01-11 20:21:13 +01  2h 6min Fri 2026-01-09 20:20:37 +01            - apt-daily.timer              apt-daily.service
+< < < < < Mon 2026-01-12 00:00:00 +01 5h 45min Sun 2026-01-11 15:48:41 +01 2h 26min ago dpkg-db-backup.timer         dpkg-db-backup.service
+< < < < < Mon 2026-01-12 00:00:00 +01 5h 45min Sun 2026-01-11 15:48:41 +01 2h 26min ago logrotate.timer              logrotate.service
+< < < < ---
+< < < < > Sun 2026-01-11 18:31:22 +01     9min Sun 2026-01-11 17:34:18 +01    47min ago anacron.timer                anacron.service
+< < < < > Sun 2026-01-11 18:32:58 +01    10min Fri 2026-01-09 03:55:51 +01            - plocate-updatedb.timer       plocate-updatedb.service
+< < < < > Sun 2026-01-11 18:37:39 +01    15min Fri 2026-01-09 18:28:03 +01            - motd-news.timer              motd-news.service
+< < < < > Sun 2026-01-11 18:39:00 +01    16min Sun 2026-01-11 18:09:03 +01    13min ago phpsessionclean.timer        phpsessionclean.service
+< < < < > Sun 2026-01-11 18:46:44 +01    24min Sun 2026-01-11 17:37:42 +01    44min ago fwupd-refresh.timer          fwupd-refresh.service
+< < < < > Sun 2026-01-11 20:21:13 +01 1h 58min Fri 2026-01-09 20:20:37 +01            - apt-daily.timer              apt-daily.service
+< < < < > Mon 2026-01-12 00:00:00 +01 5h 37min Sun 2026-01-11 15:48:41 +01 2h 33min ago dpkg-db-backup.timer         dpkg-db-backup.service
+< < < < > Mon 2026-01-12 00:00:00 +01 5h 37min Sun 2026-01-11 15:48:41 +01 2h 33min ago logrotate.timer              logrotate.service
+< < < < 133,136c133,136
+< < < < < Mon 2026-01-12 06:57:10 +01      12h Sun 2026-01-11 16:30:38 +01 1h 44min ago apt-daily-upgrade.timer      apt-daily-upgrade.service
+< < < < < Mon 2026-01-12 09:16:28 +01      15h Sun 2026-01-11 16:40:42 +01 1h 34min ago man-db.timer                 man-db.service
+< < < < < Mon 2026-01-12 16:03:08 +01      21h Sun 2026-01-11 16:03:08 +01 2h 11min ago systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.service
+< < < < < Sun 2026-01-18 03:10:20 +01   6 days Sun 2026-01-11 15:48:41 +01 2h 26min ago e2scrub_all.timer            e2scrub_all.service
+< < < < ---
+< < < < > Mon 2026-01-12 06:57:10 +01      12h Sun 2026-01-11 16:30:38 +01 1h 51min ago apt-daily-upgrade.timer      apt-daily-upgrade.service
+< < < < > Mon 2026-01-12 09:16:28 +01      14h Sun 2026-01-11 16:40:42 +01 1h 41min ago man-db.timer                 man-db.service
+< < < < > Mon 2026-01-12 16:03:08 +01      21h Sun 2026-01-11 16:03:08 +01 2h 19min ago systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.service
+< < < < > Sun 2026-01-18 03:10:20 +01   6 days Sun 2026-01-11 15:48:41 +01 2h 33min ago e2scrub_all.timer            e2scrub_all.service
+< < < < 140,244d139
+< < < < < 1c1
+< < < < < < [+] Scan démarré à 20260111_1812
+< < < < < ---
+< < < < < > [+] Scan démarré à 20260111_1814
+< < < < < 50a51,120
+< < < < < > /usr/sbin/mount.cifs
+< < < < < > /usr/sbin/unix_chkpwd
+< < < < < > /usr/sbin/pppd
+< < < < < > /usr/sbin/mount.ecryptfs_private
+< < < < < > /usr/sbin/pam_extrausers_chkpwd
+< < < < < > /usr/libexec/spice-client-glib-usb-acl-helper
+< < < < < > /usr/libexec/camel-lock-helper-1.2
+< < < < < > /usr/bin/su
+< < < < < > /usr/bin/passwd
+< < < < < > /usr/bin/ssh-agent
+< < < < < > /usr/bin/umount
+< < < < < > /usr/bin/crontab
+< < < < < > /usr/bin/gpasswd
+< < < < < > /usr/bin/chfn
+< < < < < > /usr/bin/chsh
+< < < < < > /usr/bin/newgrp
+< < < < < > /usr/bin/expiry
+< < < < < > /usr/bin/mount
+< < < < < > /usr/bin/chage
+< < < < < > /usr/bin/plocate
+< < < < < > /usr/bin/sudo
+< < < < < > /usr/bin/pkexec
+< < < < < > /usr/bin/fusermount3
+< < < < < > /usr/lib/virtualbox/VBoxNetNAT
+< < < < < > /usr/lib/virtualbox/VBoxHeadless
+< < < < < > /usr/lib/virtualbox/VBoxNetDHCP
+< < < < < > /usr/lib/virtualbox/VBoxNetAdpCtl
+< < < < < > /usr/lib/virtualbox/VBoxVolInfo
+< < < < < > /usr/lib/virtualbox/VirtualBoxVM
+< < < < < > /usr/lib/cockpit/cockpit-session
+< < < < < > /usr/lib/openssh/ssh-keysign
+< < < < < > /usr/lib/dbus-1.0/dbus-daemon-launch-helper
+< < < < < > /usr/lib/polkit-1/polkit-agent-helper-1
+< < < < < > /usr/lib/xorg/Xorg.wrap
+< < < < < > /opt/lampp/bin/suexec
+< < < < < > /opt/pt/bin/updatepttp
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/sbin/mount.cifs
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/sbin/unix_chkpwd
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/sbin/pppd
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/sbin/mount.ecryptfs_private
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/sbin/pam_extrausers_chkpwd
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/libexec/camel-lock-helper-1.2
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/su
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/passwd
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/ssh-agent
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/umount
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/crontab
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/gpasswd
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/chfn
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/chsh
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/newgrp
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/expiry
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/mount
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/chage
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/plocate
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/sudo
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/pkexec
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/bin/fusermount3
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/virtualbox/VBoxNetNAT
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/virtualbox/VBoxHeadless
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/virtualbox/VBoxNetDHCP
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/virtualbox/VBoxNetAdpCtl
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/virtualbox/VBoxVolInfo
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/virtualbox/VirtualBoxVM
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/openssh/ssh-keysign
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/polkit-1/polkit-agent-helper-1
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/usr/lib/xorg/Xorg.wrap
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/opt/lampp/bin/suexec
+< < < < < > /timeshift/snapshots/2025-10-20_11-27-45/localhost/opt/pt/bin/updatepttp
+< < < < < 54,61c124,131
+< < < < < < Sun 2026-01-11 18:31:22 +01    18min Sun 2026-01-11 17:34:18 +01    38min ago anacron.timer                anacron.service
+< < < < < < Sun 2026-01-11 18:32:58 +01    19min Fri 2026-01-09 03:55:51 +01            - plocate-updatedb.timer       plocate-updatedb.service
+< < < < < < Sun 2026-01-11 18:37:39 +01    24min Fri 2026-01-09 18:28:03 +01            - motd-news.timer              motd-news.service
+< < < < < < Sun 2026-01-11 18:39:00 +01    25min Sun 2026-01-11 18:09:03 +01 3min 57s ago phpsessionclean.timer        phpsessionclean.service
+< < < < < < Sun 2026-01-11 18:46:44 +01    33min Sun 2026-01-11 17:37:42 +01    35min ago fwupd-refresh.timer          fwupd-refresh.service
+< < < < < < Sun 2026-01-11 20:21:13 +01  2h 8min Fri 2026-01-09 20:20:37 +01            - apt-daily.timer              apt-daily.service
+< < < < < < Mon 2026-01-12 00:00:00 +01 5h 46min Sun 2026-01-11 15:48:41 +01 2h 24min ago dpkg-db-backup.timer         dpkg-db-backup.service
+< < < < < < Mon 2026-01-12 00:00:00 +01 5h 46min Sun 2026-01-11 15:48:41 +01 2h 24min ago logrotate.timer              logrotate.service
+< < < < < ---
+< < < < < > Sun 2026-01-11 18:31:22 +01    16min Sun 2026-01-11 17:34:18 +01    40min ago anacron.timer                anacron.service
+< < < < < > Sun 2026-01-11 18:32:58 +01    18min Fri 2026-01-09 03:55:51 +01            - plocate-updatedb.timer       plocate-updatedb.service
+< < < < < > Sun 2026-01-11 18:37:39 +01    22min Fri 2026-01-09 18:28:03 +01            - motd-news.timer              motd-news.service
+< < < < < > Sun 2026-01-11 18:39:00 +01    24min Sun 2026-01-11 18:09:03 +01     5min ago phpsessionclean.timer        phpsessionclean.service
+< < < < < > Sun 2026-01-11 18:46:44 +01    31min Sun 2026-01-11 17:37:42 +01    37min ago fwupd-refresh.timer          fwupd-refresh.service
+< < < < < > Sun 2026-01-11 20:21:13 +01  2h 6min Fri 2026-01-09 20:20:37 +01            - apt-daily.timer              apt-daily.service
+< < < < < > Mon 2026-01-12 00:00:00 +01 5h 45min Sun 2026-01-11 15:48:41 +01 2h 26min ago dpkg-db-backup.timer         dpkg-db-backup.service
+< < < < < > Mon 2026-01-12 00:00:00 +01 5h 45min Sun 2026-01-11 15:48:41 +01 2h 26min ago logrotate.timer              logrotate.service
+< < < < < 63,66c133,136
+< < < < < < Mon 2026-01-12 06:57:10 +01      12h Sun 2026-01-11 16:30:38 +01 1h 42min ago apt-daily-upgrade.timer      apt-daily-upgrade.service
+< < < < < < Mon 2026-01-12 09:16:28 +01      15h Sun 2026-01-11 16:40:42 +01 1h 32min ago man-db.timer                 man-db.service
+< < < < < < Mon 2026-01-12 16:03:08 +01      21h Sun 2026-01-11 16:03:08 +01  2h 9min ago systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.service
+< < < < < < Sun 2026-01-18 03:10:20 +01   6 days Sun 2026-01-11 15:48:41 +01 2h 24min ago e2scrub_all.timer            e2scrub_all.service
+< < < < < ---
+< < < < < > Mon 2026-01-12 06:57:10 +01      12h Sun 2026-01-11 16:30:38 +01 1h 44min ago apt-daily-upgrade.timer      apt-daily-upgrade.service
+< < < < < > Mon 2026-01-12 09:16:28 +01      15h Sun 2026-01-11 16:40:42 +01 1h 34min ago man-db.timer                 man-db.service
+< < < < < > Mon 2026-01-12 16:03:08 +01      21h Sun 2026-01-11 16:03:08 +01 2h 11min ago systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.service
+< < < < < > Sun 2026-01-18 03:10:20 +01   6 days Sun 2026-01-11 15:48:41 +01 2h 26min ago e2scrub_all.timer            e2scrub_all.service
+< < < < < 68a139
+< < < < < > ===== CHANGEMENTS DEPUIS LE DERNIER SCAN =====
